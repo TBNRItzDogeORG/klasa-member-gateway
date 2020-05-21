@@ -1,10 +1,10 @@
-const { GuildMemberManager } = require('discord.js');
+const { GuildMemberStore } = require('discord.js');
 
 /**
- * Adds our extensions to d.js's MemberManager
- * @extends external:GuildMemberManager
+ * Adds our extensions to d.js's MemberStore
+ * @extends external:GuildMemberStore
  */
-class KlasaGuildMemberManager extends GuildMemberManager {
+class KlasaGuildMemberStore extends GuildMemberStore {
 
 	async _fetchSingle(...args) {
 		const member = await super._fetchSingle(...args);
@@ -20,4 +20,4 @@ class KlasaGuildMemberManager extends GuildMemberManager {
 
 }
 
-module.exports = KlasaGuildMemberManager;
+module.exports = KlasaGuildMemberStore;
